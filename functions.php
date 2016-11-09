@@ -4,12 +4,12 @@
 -   Contactknoppen WhatsApp & Snapchat > hover effect met informatie
 -   Contactknoppen veranderen naar OS specifiek
 -   Statistieken arraylist veranderen in fadein/out slideshow.
--   WP Cron omzetten in gewone cronjob
 
 -   Kleuren aanpassen en logo's toepassen
 
 -   Apple Health stappen omzetten (op een gemiddelde maandag ed)
 -   Grote thumbnail functie
+-   Mailfetch all goed maken
 
     --- TO DO LOG --    */
 
@@ -189,14 +189,14 @@ function sngrs_custom_sizes( $sizes ) {
 }
 
 /// UPDATER
-/* if( ! class_exists( 'Smashing_Updater' ) ){
+if( ! class_exists( 'Smashing_Updater' ) ){
 	include_once( get_stylesheet_directory() . '/inc/updater.php' );
 };
 $updater = new Smashing_Updater( __FILE__ );
 $updater->set_username( 'HahaIkBenRogier' );
 $updater->set_repository( 'WP-SNGRS2016-Theme' );
 // $updater->authorize( '' ); // Your auth code goes here for private repos
-$updater->initialize(); */
+$updater->initialize();
 
 /// // unregister all widgets 
 function unregister_default_widgets() {     
@@ -212,7 +212,6 @@ function unregister_default_widgets() {
     unregister_widget('WP_Widget_Recent_Comments');
     unregister_widget('WP_Widget_RSS');     
     unregister_widget('WP_Widget_Tag_Cloud');     
-    //unregister_widget('WP_Nav_Menu_Widget');  
     unregister_widget('TTrust_Recent_Posts'); } 
 add_action('widgets_init', 'unregister_default_widgets', 11);
 
