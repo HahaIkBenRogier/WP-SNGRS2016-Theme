@@ -2,7 +2,6 @@
 
 /*  --- TO DO LOG --
 
--   Automatisch categorie geven aan post type
 -   Teksten statistieken aanpassen
 
 -   Contactknoppen WhatsApp & Snapchat > hover effect met informatie
@@ -198,7 +197,7 @@ if( ! class_exists( 'Smashing_Updater' ) ){
 };
 $updater = new Smashing_Updater( __FILE__ );
 $updater->set_username( 'HahaIkBenRogier' );
-$updater->set_repository( 'WP-WeAreTheFifty' );
+$updater->set_repository( 'WP-SNGRS2016-Theme' );
 // $updater->authorize( '' ); // Your auth code goes here for private repos
 $updater->initialize();
 

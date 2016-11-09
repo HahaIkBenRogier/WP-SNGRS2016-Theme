@@ -122,12 +122,17 @@ function sngrs_rgr_cat_func( $post_ID ) {
     // check if current post type is movie review
     if(get_post_type($post_ID)==$post_type) {
         // assign a category for this post by default
-        wp_set_post_categories( $post_ID, $post_categories );
+        wp_set_post_categories( $post_ID->ID, $post_categories );
     }
 
    return $post_ID;
 }
-add_action( 'publish_post', 'sngrs_rgr_cat_func' );
+add_action('the_post', 'sngrs_rgr_cat_func');
+add_action('save_post', 'sngrs_rgr_cat_func');
+add_action('draft_to_publish', 'sngrs_rgr_cat_func');
+add_action('new_to_publish', 'sngrs_rgr_cat_func');
+add_action('pending_to_publish', 'sngrs_rgr_cat_func');
+add_action('future_to_publish', 'sngrs_rgr_cat_func');
 
 /// CUSTOM POST TYPE - SCHOOL
 if ( ! function_exists('sngrs_school_cpt_func') ) {
@@ -255,12 +260,17 @@ function sngrs_school_cat_func( $post_ID ) {
     // check if current post type is movie review
     if(get_post_type($post_ID)==$post_type) {
         // assign a category for this post by default
-        wp_set_post_categories( $post_ID, $post_categories );
+        wp_set_post_categories( $post_ID->ID, $post_categories );
     }
 
    return $post_ID;
 }
-add_action( 'publish_post', 'sngrs_school_cat_func' );
+add_action('the_post', 'sngrs_school_cat_func');
+add_action('save_post', 'sngrs_school_cat_func');
+add_action('draft_to_publish', 'sngrs_school_cat_func');
+add_action('new_to_publish', 'sngrs_school_cat_func');
+add_action('pending_to_publish', 'sngrs_school_cat_func');
+add_action('future_to_publish', 'sngrs_school_cat_func');
 
 /// CUSTOM POST TYPE - SNGRS
 
@@ -391,12 +401,17 @@ function sngrs_sngrs_cat_func( $post_ID ) {
     // check if current post type is movie review
     if(get_post_type($post_ID)==$post_type) {
         // assign a category for this post by default
-        wp_set_post_categories( $post_ID, $post_categories );
+        wp_set_post_categories( $post_ID->ID, $post_categories );
     }
 
    return $post_ID;
 }
-add_action( 'publish_post', 'sngrs_sngrs_cat_func' );
+add_action('the_post', 'sngrs_sngrs_cat_func');
+add_action('save_post', 'sngrs_sngrs_cat_func');
+add_action('draft_to_publish', 'sngrs_sngrs_cat_func');
+add_action('new_to_publish', 'sngrs_sngrs_cat_func');
+add_action('pending_to_publish', 'sngrs_sngrs_cat_func');
+add_action('future_to_publish', 'sngrs_sngrs_cat_func');
 
 /// CUSTOM POST TYPE - PHOTOS
 
@@ -527,12 +542,17 @@ function sngrs_photo_cat_func( $post_ID ) {
     // check if current post type is movie review
     if(get_post_type($post_ID)==$post_type) {
         // assign a category for this post by default
-        wp_set_post_categories( $post_ID, $post_categories );
+        wp_set_post_categories( $post_ID->ID, $post_categories );
     }
 
    return $post_ID;
 }
-add_action( 'publish_post', 'sngrs_photo_cat_func' );
+add_action('the_post', 'sngrs_photo_cat_func');
+add_action('save_post', 'sngrs_photo_cat_func');
+add_action('draft_to_publish', 'sngrs_photo_cat_func');
+add_action('new_to_publish', 'sngrs_photo_cat_func');
+add_action('pending_to_publish', 'sngrs_photo_cat_func');
+add_action('future_to_publish', 'sngrs_photo_cat_func');
 
 /// Mellow_Post_meta
 function mellow_post_meta() {
