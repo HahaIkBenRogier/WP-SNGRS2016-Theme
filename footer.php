@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Mellow
+ * @package sngrs
  * @version 1.0
  */
 	$footer_left    = get_theme_mod( 'mellow_footer_left' );

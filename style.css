@@ -26,6 +26,10 @@ h1 {
     max-width: 100%;
 }
 
+.entry-content img, figure.wp-caption {
+    width: 100%;
+}
+
 footer.site-footer .widget {
     float: left;
     display: block;

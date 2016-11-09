@@ -2,7 +2,6 @@
 
 /*  --- TO DO LOG --
 
--   Image sizes aanpassen aan post (max 1024) en vierkant voor portfolio (480x480)
 -   Automatisch categorie geven aan post type
 -   Teksten statistieken aanpassen
 
@@ -182,8 +181,26 @@ add_action('pending_to_publish', 'auto_featured_image');
 add_action('future_to_publish', 'auto_featured_image');
 
 /// IMAGE SIZES
-add_image_size( 'home-image', 480, 480, true ); // Hard Crop Mode
-add_image_size( 'singlepost-image', 1024, 9999 ); // Unlimited Height Mode
+add_image_size( 'sngrs_home_image', 480, 480, true ); // Hard Crop Mode
+add_image_size( 'sngrs_home_image_l', 960, 960, true ); // Hard Crop Mode
+add_image_size( 'sngrs_singlepost_image', 2048 ); // Unlimited Height Mode
+
+add_filter( 'image_size_names_choose', 'sngrs_custom_sizes' );
+function sngrs_custom_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+        'sngrs_singlepost_image' => __( 'Paginabreedte' ),
+    ) );
+}
+
+/// UPDATER
+if( ! class_exists( 'Smashing_Updater' ) ){
+	include_once( get_stylesheet_directory() . '/inc/updater.php' );
+};
+$updater = new Smashing_Updater( __FILE__ );
+$updater->set_username( 'HahaIkBenRogier' );
+$updater->set_repository( 'WP-WeAreTheFifty' );
+// $updater->authorize( '' ); // Your auth code goes here for private repos
+$updater->initialize();
 
 
 /// OVERIGE DINGEN
