@@ -1,0 +1,71 @@
+/*
+ Theme Name:   SNGRS 2016
+ Theme URI:    http://sngrs.com/
+ Description:  Edit van Themetrust Mellow thema
+ Author:       SNGRS /Rogier Sangers
+ Author URI:   http://sngrs.com
+ Template:     mellow
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain:  sngrs
+*/
+
+/* @import url('https://fonts.googleapis.com/css?family=Merriweather|Raleway'); */
+
+body {
+    font-family: 'Raleway', sans-serif !important;
+}
+
+h1 {
+    font-family: 'Merriweather', serif !important;
+}
+
+#main.site-main {
+    width: 100%;
+    max-width: 100%;
+}
+
+footer.site-footer .widget {
+    float: left;
+    display: block;
+    margin-bottom: 20px;
+    width: 100% !important;
+    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both !important;
+}
+
+footer.site-footer .widget .inside, footer.site-footer .widget .inside div, footer .inner ul {
+   overflow: auto;
+}
+
+footer .inner ul {
+    display: inline-block;
+}
+
+footer .inner ul li {
+    float: left;
+    margin: 0 20px;
+}
+
+@media only screen and (max-width: 946px) {
+    footer .inner a.fa {
+        margin: 10px 20px !important;
+    }
+    footer .inner ul li {
+        margin: 20px;
+        width: calc(50% - 40px);
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    footer .inner a.fa {
+        margin: 20px !important;
+    }
+    footer .inner ul li {
+        margin: 10px 20px;
+        width: calc(100% - 40px);
+    }
+}
