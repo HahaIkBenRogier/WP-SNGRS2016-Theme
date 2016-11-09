@@ -29,26 +29,21 @@ function sngrs_whatpulse_shortcode( $atts , $content = null ) {
         $Total = get_option( 'sngrs_whatpulse_'.$content );
         $daysAmount = get_option( 'sngrs_whatpulse_days');
         
-        $zin1 = " heb ik gemiddeld ";
-        $zin2 = " keer de muis aangeklikt ";
+        $zin1 = " muiskliks ";
         if ($content === "clicks") {
-            $zin1 = " heb ik gemiddeld ";
-            $zin2 = " keer de muis aangeklikt.";
+            $zin1 = " muiskliks ";
         } if ($content === "keys") {
-            $zin1 = " heb ik gemiddeld ";
-            $zin2 = " keer toetsen ingedrukt.";
+            $zin1 = " toetsen ingedrukt ";
         } if ($content === "download") {
-            $zin1 = " haal ik gemiddeld ";
-            $zin2 = " MB binnen van het internet.";
+            $zin1 = " MB aan downloads ";
         } if ($content === "upload") {
-            $zin1 = " upload ik gemiddeld ";
-            $zin2 = " MB.";
+            $zin1 = " MB aan uploads ";
         }
         
-        $Hour = "Per uur".$zin1.round($Total / ($daysAmount * 24), 0).$zin2;
-        $Day = "Per dag".$zin1.round($Total / $daysAmount, 0).$zin2;
-        $Week = "Per week".$zin1.round($Total / ( $daysAmount / 7 ), 0).$zin2;
-        $Month = "Per maand".$zin1.round($Total / ( $daysAmount / 30.5 ), 0).$zin2;
+        $Hour = round($Total / ($daysAmount * 24), 0).$zin1."per uur";
+        $Day = round($Total / ($daysAmount * 24), 0).$zin1."per dag";
+        $Week = round($Total / ($daysAmount * 24), 0).$zin1."per week";
+        $Month = round($Total / ($daysAmount * 24), 0).$zin1."per maand";
         
         return  "<script> 
                 var array_".$content." = ['".$Hour."', '".$Day."', '".$Week."', '".$Month."'] ;
@@ -107,7 +102,8 @@ function sngrs_lastfm_recent_shortcode() {
     $diff = time() - $hoi[0]['time'];
     $time = sngrs_lastfm_recent_diff($diff);
     
-    $span_text = "<span class='stats recent'><b>".$hoi[0]['title']."</b> van <b>".$hoi[0]['artist']."</b> (".$time.")</span>";
+     $span_text = "<span class='stats recent'>".$time." naar <b>".$hoi[0]['title']."</b> van <b>".$hoi[0]['artist']."</b></span>";
+    //$span_text = "<span class='stats recent'><b>".$hoi[0]['title']."</b> van <b>".$hoi[0]['artist']."</b> (".$time.")</span>";
     return $script_array.$span_text;
     
 }

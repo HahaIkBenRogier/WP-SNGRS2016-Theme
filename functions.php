@@ -2,8 +2,6 @@
 
 /*  --- TO DO LOG --
 
--   Teksten statistieken aanpassen
-
 -   Contactknoppen WhatsApp & Snapchat > hover effect met informatie
 -   Contactknoppen veranderen naar OS specifiek
 -   Statistieken arraylist veranderen in fadein/out slideshow.
