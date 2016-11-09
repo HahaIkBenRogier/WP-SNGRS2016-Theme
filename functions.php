@@ -1,5 +1,4 @@
 <?php
-
 /*  --- TO DO LOG --
 
 -   Contactknoppen WhatsApp & Snapchat > hover effect met informatie
@@ -190,14 +189,32 @@ function sngrs_custom_sizes( $sizes ) {
 }
 
 /// UPDATER
-if( ! class_exists( 'Smashing_Updater' ) ){
+/* if( ! class_exists( 'Smashing_Updater' ) ){
 	include_once( get_stylesheet_directory() . '/inc/updater.php' );
 };
 $updater = new Smashing_Updater( __FILE__ );
 $updater->set_username( 'HahaIkBenRogier' );
 $updater->set_repository( 'WP-SNGRS2016-Theme' );
 // $updater->authorize( '' ); // Your auth code goes here for private repos
-$updater->initialize();
+$updater->initialize(); */
+
+/// // unregister all widgets 
+function unregister_default_widgets() {     
+    unregister_widget('WP_Widget_Pages');     
+    unregister_widget('WP_Widget_Calendar');     
+    unregister_widget('WP_Widget_Archives');     
+    unregister_widget('WP_Widget_Links');     
+    unregister_widget('WP_Widget_Meta');     
+    unregister_widget('WP_Widget_Search');     
+    unregister_widget('TTrust_Flickr');     
+    unregister_widget('WP_Widget_Categories');
+    unregister_widget('WP_Widget_Recent_Posts');   
+    unregister_widget('WP_Widget_Recent_Comments');
+    unregister_widget('WP_Widget_RSS');     
+    unregister_widget('WP_Widget_Tag_Cloud');     
+    //unregister_widget('WP_Nav_Menu_Widget');  
+    unregister_widget('TTrust_Recent_Posts'); } 
+add_action('widgets_init', 'unregister_default_widgets', 11);
 
 
 /// OVERIGE DINGEN

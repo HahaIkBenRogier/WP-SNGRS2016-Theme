@@ -11,20 +11,21 @@ add_shortcode( 'sngrs_birthday', 'sngrs_shortcode_birthday' );
 
 // MAIL UNREAD
 function sngrs_mail_unread_shortcode() {
-    return get_option( 'sngrs_mail_unread' );
     //sngrs_mail_unread_func();
+    return get_option( 'sngrs_mail_unread' );
 }
 add_shortcode( 'sngrs_mail_unread', 'sngrs_mail_unread_shortcode' );
 
 // MAIL ALL
 function sngrs_mail_all_shortcode() {
-    return get_option( 'sngrs_mail_all' );
     //sngrs_mail_all_func();
+    return get_option( 'sngrs_mail_all' );
 }
 add_shortcode( 'sngrs_mail_all', 'sngrs_mail_all_shortcode' );
 
 // WHATPULSE
 function sngrs_whatpulse_shortcode( $atts , $content = null ) {
+    //sngrs_whatpulse_func();
     if ($content === "clicks" || "keys" || "download" || "upload" ) {
         $Total = get_option( 'sngrs_whatpulse_'.$content );
         $daysAmount = get_option( 'sngrs_whatpulse_days');
