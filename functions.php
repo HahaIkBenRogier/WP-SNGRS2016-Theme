@@ -1,15 +1,15 @@
 <?php
 /*  --- TO DO LOG --
 
--   Contactknoppen WhatsApp & Snapchat > hover effect met informatie
 -   Contactknoppen veranderen naar OS specifiek
+-   Responsive check hovercards
 -   Statistieken arraylist veranderen in fadein/out slideshow.
 
 -   Kleuren aanpassen en logo's toepassen
 
 -   Apple Health stappen omzetten (op een gemiddelde maandag ed)
--   Grote thumbnail functie
 -   Mailfetch all goed maken
+-   PDF Viewer inbouwen
 
     --- TO DO LOG --    */
 
@@ -38,6 +38,10 @@ function theme_enqueue_styles() {
     
     if( is_front_page() || is_page_template() )
 		wp_enqueue_script( 'mellow-isotope', get_bloginfo( 'template_url' ) . '/js/jquery.isotope.js', array( 'jquery' ), '1.5.25', true );
+    
+    wp_register_script('sngrs-js', get_stylesheet_directory_uri() . '/script.js', array('jquery'),'1.1', true);
+wp_enqueue_script('sngrs-js');
+
     
 }
 

@@ -46,10 +46,13 @@ function sngrs_whatpulse_shortcode( $atts , $content = null ) {
         $Week = round($Total / ($daysAmount * 24), 0).$zin1."per week";
         $Month = round($Total / ($daysAmount * 24), 0).$zin1."per maand";
         
-        return  "<script> 
-                var array_".$content." = ['".$Hour."', '".$Day."', '".$Week."', '".$Month."'] ;
+        /* return  "<script> 
+                jQuery(document).ready(function() {
+                    var array_".$content." = ['".$Hour."', '".$Day."', '".$Week."', '".$Month."'];
+                    statWhatpulse(array_".$content.");
+                });
                 </script>
-                <span class='stats ".$content."'>".$Day."</span>";
+                <span class='stats ".$content."'>".$Day."</span>"; */
         
     }
 }
@@ -95,8 +98,8 @@ function sngrs_lastfm_recent_diff($diff) {
     
 }
 function sngrs_lastfm_recent_shortcode() {
-    //sngrs_lastfm_recent_function();
-    $tentracks = get_option('sngrs_lastfm_recent');
+    sngrs_lastfm_recent_function();
+   /* $tentracks = get_option('sngrs_lastfm_recent');
     $script_array = "<script>var array_recent = ".$tentracks.";
                     console.log( array_recent )</script>";
     $hoi = json_decode($tentracks, true);
@@ -105,7 +108,7 @@ function sngrs_lastfm_recent_shortcode() {
     
      $span_text = "<span class='stats recent'>".$time." naar <b>".$hoi[0]['title']."</b> van <b>".$hoi[0]['artist']."</b></span>";
     //$span_text = "<span class='stats recent'><b>".$hoi[0]['title']."</b> van <b>".$hoi[0]['artist']."</b> (".$time.")</span>";
-    return $script_array.$span_text;
+    return $script_array.$span_text; */
     
 }
 add_shortcode( 'sngrs_lastfm_recent', 'sngrs_lastfm_recent_shortcode' );

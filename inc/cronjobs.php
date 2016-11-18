@@ -44,7 +44,7 @@ function sngrs_mail_all_func( ) {
 	    $all = 0;
 	    foreach($hosts as $host){
 	        $inbox = imap_open($host['hostname'], $host['username'], $host['password']) or die('Cannot connect to '. key($host).': ' . imap_last_error());
-	        $emails = imap_search($inbox,'ALL');
+	        $emails = imap_search($inbox,'UNDELETED');
 	        $count = count($emails);
 	        $all+= $count;
 	        imap_close($inbox);
@@ -117,9 +117,9 @@ function sngrs_lastfm_recent_function( ) {
 	    curl_close($ch);
 	    $data = json_decode($json_content, true);
 	    $recent = $data['recenttracks']['track'];
-	    //print_r($recent);
+	    print_r($recent);
 	
-	    $tentracks = array();
+	    /* $tentracks = array();
 	    for ($tracks = 0; $tracks < 10; ++$tracks) {
 	        $track = $recent[$tracks];
 	        //print_r($track);
@@ -134,7 +134,7 @@ function sngrs_lastfm_recent_function( ) {
 	
 	    $tentracks = json_encode($tentracks);
 	
-	        update_option( 'sngrs_lastfm_recent', $tentracks );
+	   update_option( 'sngrs_lastfm_recent', $tentracks ); */
 	
 	    $ip = "sngrs_lastfm_recent ".time()."\n";
 	    file_put_contents(get_stylesheet_directory() . '/inc/log.txt', $ip, FILE_APPEND);

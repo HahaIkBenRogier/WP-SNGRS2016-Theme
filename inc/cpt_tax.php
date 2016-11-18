@@ -116,7 +116,7 @@ add_action( 'init', 'sngrs_rgr_tax_func', 0 );
 
 function sngrs_rgr_cat_func( $post_ID ) {
     $post_type = 'sngrs_rgr_cpt';
-    $cat_id = 12; // Your reviews category id (for example: 123)
+    $cat_id = 27; // Your reviews category id (for example: 123)
     $post_categories=array($cat_id);
 
     // check if current post type is movie review
@@ -254,7 +254,7 @@ add_action( 'init', 'sngrs_school_tax_func', 0 );
 
 function sngrs_school_cat_func( $post_ID ) {
     $post_type = 'sngrs_school_cpt';
-    $cat_id = 13; // Your reviews category id (for example: 123)
+    $cat_id = 28; // Your reviews category id (for example: 123)
     $post_categories=array($cat_id);
 
     // check if current post type is movie review
@@ -395,7 +395,7 @@ add_action( 'init', 'sngrs_sngrs_tax_func', 0 );
 
 function sngrs_sngrs_cat_func( $post_ID ) {
     $post_type = 'sngrs_sngrs_cpt';
-    $cat_id = 14; // Your reviews category id (for example: 123)
+    $cat_id = 29; // Your reviews category id (for example: 123)
     $post_categories=array($cat_id);
 
     // check if current post type is movie review
@@ -536,7 +536,7 @@ add_action( 'init', 'sngrs_photo_tax_func', 0 );
 
 function sngrs_photo_cat_func( $post_ID ) {
     $post_type = 'sngrs_photo_cpt';
-    $cat_id = 15; // Your reviews category id (for example: 123)
+    $cat_id = 26; // Your reviews category id (for example: 123)
     $post_categories=array($cat_id);
 
     // check if current post type is movie review

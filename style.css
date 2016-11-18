@@ -13,7 +13,7 @@
 
 /* @import url('https://fonts.googleapis.com/css?family=Merriweather|Raleway'); */
 
-body {
+body, .hovercard {
     font-family: 'Raleway', sans-serif !important;
 }
 
@@ -73,3 +73,22 @@ footer .inner ul li {
         width: calc(100% - 40px);
     }
 }
+
+.hovercard {
+    color: black;
+    clear: both;
+    float: none;
+    text-align: left;
+    background: white;
+    padding: 10px;
+    padding-right: 20px;
+    /* font: 11px Arial, Helvetica, sans-serif; 
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px; */
+    position: absolute;
+    bottom: 310px;
+    border: 2px solid #999;
+    display: none;
+}
+
